@@ -1,13 +1,21 @@
+<div class="row">
 
-<hr>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+  <div class="col-3 first-column">
+    <div class="sidenav border">
+      <h2>List of Heroes</h2>
+      <ul class="heroes">
+        <li *ngFor="let hero of heroes" 
+            [class.selected]="hero === selectedHero"
+            (click)="onSelect(hero)"> 
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
 
-<hr>
-<h2>List of Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" 
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)"> 
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
+  <div class="col-9 first-column">
+    <div class="sidenav border">
+      <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+    </div>
+  </div>
+</div>
