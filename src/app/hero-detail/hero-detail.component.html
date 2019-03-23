@@ -1,14 +1,10 @@
-<div style="padding-left:1em;">
-
-<h2><span>Editing details for:</span> <span></span> {{hero.name | uppercase}} </h2>
-  <div *ngIf="hero" class="hero-details" style="padding-left:1em;">
-    <div class="lbl_hero">Id:</div>
-    <input [(ngModel)]="hero.id" placeholder="id" readonly/>
-    <br />
-    <div class="lbl_hero">Name:</div>
-    <input [(ngModel)]="hero.name" placeholder="name"/>
-    <br />
-    <div class="lbl_hero">Race:</div>
-    <input [(ngModel)]="hero.race" placeholder="race"/>
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
   </div>
+  <button (click)="goBack()">go back</button>
 </div>
